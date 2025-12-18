@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GenA Privacy Policy - Learn how we collect, use, and protect your personal information.">
+    <title>Privacy Policy | GenA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0d14;
+            --secondary: #12161f;
+            --accent: #8b7cf7;
+            --accent-light: #a99ff7;
+            --text: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --white: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.06);
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Stars Background */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .stars-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .stars-layer.layer-1 {
+            background-image:
+                radial-gradient(1px 1px at 10% 10%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 20% 25%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1.5px 1.5px at 35% 8%, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 50% 20%, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 65% 15%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1.5px 1.5px at 80% 5%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 90% 22%, rgba(255,255,255,0.5), transparent);
+            background-size: 100% 100%;
+            animation: twinkle1 8s ease-in-out infinite;
+        }
+
+        .stars-layer.layer-2 {
+            background-image:
+                radial-gradient(1px 1px at 15% 55%, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1.5px 1.5px at 30% 62%, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 42% 58%, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 55% 52%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 70% 65%, rgba(255,255,255,0.6), transparent);
+            background-size: 100% 100%;
+            animation: twinkle2 10s ease-in-out infinite;
+        }
+
+        @keyframes twinkle1 {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes twinkle2 {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.5; }
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 124, 247, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 13, 20, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .intro {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .card h2 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.35rem;
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            color: var(--white);
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .card ul {
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .card li {
+            color: var(--text);
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .card li ul {
+            margin-top: 0.5rem;
+        }
+
+        .card strong {
+            color: var(--accent-light);
+        }
+
+        .contact-box {
+            background: rgba(139, 124, 247, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+
+        .contact-box p {
+            margin-bottom: 0;
+        }
+
+        .contact-box a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-box a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-container">
+        <div class="stars-layer layer-1"></div>
+        <div class="stars-layer layer-2"></div>
+    </div>
+    <div class="gradient-overlay"></div>
+
+    <header>
+        <a href="index.html" class="logo">GenA</a>
+        <nav>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#download">Download</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: November 28, 2025</p>
+        </div>
+
+        <p class="intro">
+            This Privacy Policy describes how GenA ("we," "us," or "our") collects, uses, and shares information about you when you use our mobile application (the "App").
+        </p>
+
+        <div class="card">
+            <h2>1. Information We Collect</h2>
+
+            <h3>1.1 Information You Provide</h3>
+            <ul>
+                <li><strong>Profile Information:</strong> Name, email address (optional)</li>
+                <li><strong>Birth Information:</strong> Birth date, birth time, and birth location (required for astrological calculations)</li>
+                <li><strong>Partner Information:</strong> Birth details for relationship compatibility analysis</li>
+                <li><strong>Chat Data:</strong> Messages and questions you send through the chat feature</li>
+            </ul>
+
+            <h3>1.2 Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers</li>
+                <li><strong>Usage Data:</strong> App features accessed, time spent in app, interaction patterns</li>
+                <li><strong>Location Data:</strong> Only the location you manually enter for birth chart calculations (we do not track your physical location)</li>
+            </ul>
+
+            <h3>1.3 Third-Party Services</h3>
+            <p>Our App uses the following third-party services that may collect information:</p>
+            <ul>
+                <li><strong>Firebase:</strong> For user authentication and secure cloud data storage</li>
+                <li><strong>Google Sign-In:</strong> For account authentication</li>
+                <li><strong>RevenueCat:</strong> For subscription and payment processing</li>
+                <li><strong>DeepSeek AI:</strong> For horoscope generation and chat responses</li>
+                <li><strong>Expo Platform:</strong> For app updates and push notifications</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the collected information for the following purposes:</p>
+            <ul>
+                <li><strong>Birth Chart Calculations:</strong> Generate accurate astrological charts based on your birth data</li>
+                <li><strong>Personalized Content:</strong> Provide daily horoscopes, transit insights, and compatibility analyses</li>
+                <li><strong>Chat Feature:</strong> Process your questions and provide personalized astrological guidance via AI</li>
+                <li><strong>App Functionality:</strong> Maintain and improve app features, fix bugs, and ensure security</li>
+                <li><strong>Notifications:</strong> Send daily horoscope updates and transit alerts (only if you opt in)</li>
+                <li><strong>Subscription Management:</strong> Process payments and manage your subscription status</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>3. Data Storage and Security</h2>
+            <ul>
+                <li><strong>Local Storage:</strong> Chat history, preferences, and tutorial progress are stored locally on your device using secure storage</li>
+                <li><strong>Cloud Storage:</strong> User profile and birth data are securely stored in Firebase Firestore with encryption</li>
+                <li><strong>Encryption:</strong> All data transmitted between your device and our servers is encrypted using industry-standard HTTPS/TLS protocols</li>
+                <li><strong>Security Measures:</strong> We implement appropriate technical and organizational measures to protect your information against unauthorized access, alteration, disclosure, or destruction</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>4. How We Share Your Information</h2>
+            <p>We do not sell your personal information. We may share your information only in the following circumstances:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> With third-party vendors who help us operate the app:
+                    <ul>
+                        <li>Firebase (authentication and data storage)</li>
+                        <li>RevenueCat (subscription processing)</li>
+                        <li>DeepSeek AI (chat and horoscope generation)</li>
+                        <li>Google (authentication via Google Sign-In)</li>
+                    </ul>
+                </li>
+                <li><strong>Legal Requirements:</strong> When required by law, court order, or governmental regulation</li>
+                <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
+                <li><strong>Consent:</strong> When you explicitly consent to sharing your information</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>5. Your Privacy Rights</h2>
+            <p>You have the following rights regarding your personal information:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+                <li><strong>Correction:</strong> Update or correct your profile information at any time in the app settings</li>
+                <li><strong>Deletion:</strong> Delete all your local data using the "Clear All Local Data" option in settings, or request full account deletion</li>
+                <li><strong>Opt-Out:</strong> Disable notifications or specific features at any time</li>
+                <li><strong>Data Portability:</strong> Request a machine-readable copy of your data</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>6. Data Retention and Deletion</h2>
+            <ul>
+                <li><strong>Local Data:</strong> Stored on your device until you clear it manually or uninstall the app</li>
+                <li><strong>Account Data:</strong> Retained in Firebase while your account is active; deleted upon account deletion request</li>
+                <li><strong>Chat History:</strong> Stored locally only; cleared when you delete the app or use "Clear All Local Data"</li>
+                <li><strong>Subscription Data:</strong> Retained as required by payment processors and tax regulations</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>7. Children's Privacy</h2>
+            <p>GenA is available for users of all ages. However, if you are a parent or guardian and believe your child has provided personal information that you would like removed, please contact us at the email below.</p>
+        </div>
+
+        <div class="card">
+            <h2>8. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p>
+            <ul>
+                <li>Posting the new Privacy Policy in the app</li>
+                <li>Updating the "Last Updated" date</li>
+                <li>Sending you an in-app notification (for significant changes)</li>
+            </ul>
+            <p>Your continued use of the App after any changes indicates your acceptance of the updated Privacy Policy.</p>
+        </div>
+
+        <div class="card">
+            <h2>9. Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+            <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:support@gen-aquarius.com">support@gen-aquarius.com</a></p>
+            </div>
+            <p>We will respond to your inquiry within 30 days.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GenA. All rights reserved. &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

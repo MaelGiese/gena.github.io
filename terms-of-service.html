@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GenA Terms of Service - Read our terms and conditions for using the GenA astrology app.">
+    <title>Terms of Service | GenA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a0d14;
+            --secondary: #12161f;
+            --accent: #8b7cf7;
+            --accent-light: #a99ff7;
+            --text: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --white: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --warning-bg: rgba(251, 191, 36, 0.1);
+            --warning-border: #F59E0B;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Stars Background */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .stars-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .stars-layer.layer-1 {
+            background-image:
+                radial-gradient(1px 1px at 10% 10%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 20% 25%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1.5px 1.5px at 35% 8%, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 50% 20%, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 65% 15%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1.5px 1.5px at 80% 5%, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 90% 22%, rgba(255,255,255,0.5), transparent);
+            background-size: 100% 100%;
+            animation: twinkle1 8s ease-in-out infinite;
+        }
+
+        .stars-layer.layer-2 {
+            background-image:
+                radial-gradient(1px 1px at 15% 55%, rgba(255,255,255,0.6), transparent),
+                radial-gradient(1.5px 1.5px at 30% 62%, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 42% 58%, rgba(255,255,255,0.5), transparent),
+                radial-gradient(1px 1px at 55% 52%, rgba(255,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 70% 65%, rgba(255,255,255,0.6), transparent);
+            background-size: 100% 100%;
+            animation: twinkle2 10s ease-in-out infinite;
+        }
+
+        @keyframes twinkle1 {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes twinkle2 {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.5; }
+        }
+
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 124, 247, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 13, 20, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--white);
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .intro {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .card h2 {
+            font-family: 'Source Serif 4', serif;
+            font-size: 1.35rem;
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        .card p {
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .card ul {
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .card li {
+            color: var(--text);
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .card strong {
+            color: var(--accent-light);
+        }
+
+        .important-box {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+
+        .important-box p {
+            margin-bottom: 0;
+            color: var(--warning-border);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .contact-box {
+            background: rgba(139, 124, 247, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1rem;
+        }
+
+        .contact-box p {
+            margin-bottom: 0;
+        }
+
+        .contact-box a {
+            color: var(--accent-light);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-box a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-container">
+        <div class="stars-layer layer-1"></div>
+        <div class="stars-layer layer-2"></div>
+    </div>
+    <div class="gradient-overlay"></div>
+
+    <header>
+        <a href="index.html" class="logo">GenA</a>
+        <nav>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#download">Download</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="page-header">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: November 28, 2025</p>
+        </div>
+
+        <p class="intro">
+            Welcome to GenA. These Terms of Service ("Terms") govern your access to and use of our mobile application ("App"). By downloading, installing, or using the App, you agree to be bound by these Terms.
+        </p>
+
+        <div class="card">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By creating an account, accessing, or using GenA, you agree to:</p>
+            <ul>
+                <li>Be bound by these Terms of Service</li>
+                <li>Comply with all applicable laws and regulations</li>
+                <li>Have the legal capacity to enter into a binding agreement</li>
+            </ul>
+            <p>If you do not agree to these Terms, you may not use the App.</p>
+        </div>
+
+        <div class="card">
+            <h2>2. Description of Service</h2>
+            <p>GenA provides:</p>
+            <ul>
+                <li><strong>Birth Chart Calculations:</strong> Generate personalized natal charts based on birth date, time, and location</li>
+                <li><strong>Daily Horoscopes:</strong> Personalized daily astrological forecasts and transit insights</li>
+                <li><strong>Relationship Compatibility:</strong> Synastry analysis between two birth charts</li>
+                <li><strong>Chat Feature:</strong> AI-powered astrological guidance and question answering</li>
+                <li><strong>Notifications:</strong> Optional daily horoscope and transit alerts</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>3. User Accounts</h2>
+            <ul>
+                <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+                <li>You agree to provide accurate and complete information during registration</li>
+                <li>You are responsible for all activities that occur under your account</li>
+                <li>You must notify us immediately of any unauthorized use of your account</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>4. Subscriptions and Payments</h2>
+            <ul>
+                <li><strong>Free Tier:</strong> Basic birth chart, limited daily horoscope, and limited chat usage</li>
+                <li><strong>Premium Weekly:</strong> Unlimited horoscope generation, unlimited chat access, advanced transit insights</li>
+                <li><strong>Premium Monthly:</strong> Unlimited horoscope generation, unlimited chat access, advanced transit insights</li>
+                <li><strong>Premium Yearly:</strong> Unlimited horoscope generation, unlimited chat access, advanced transit insights (best value)</li>
+                <li>Payment will be charged to your App Store (iOS) or Google Play (Android) account</li>
+                <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period</li>
+                <li>You can manage or cancel subscriptions in your device's account settings</li>
+                <li>No refunds for partial subscription periods</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>5. Disclaimer of Warranties</h2>
+            <div class="important-box">
+                <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</p>
+            </div>
+            <ul>
+                <li><strong>No Guarantee of Accuracy:</strong> Astrological interpretations are for entertainment and personal insight purposes only</li>
+                <li><strong>Not Professional Advice:</strong> The App does not provide medical, legal, financial, or professional advice</li>
+                <li><strong>No Warranty of Availability:</strong> We do not guarantee uninterrupted or error-free service</li>
+                <li><strong>Third-Party Content:</strong> We are not responsible for the accuracy of AI-generated content</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>6. Limitation of Liability</h2>
+            <div class="important-box">
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, GENA SHALL NOT BE LIABLE FOR:</p>
+            </div>
+            <ul>
+                <li>Any indirect, incidental, special, consequential, or punitive damages</li>
+                <li>Loss of profits, data, use, or goodwill</li>
+                <li>Decisions or actions taken based on astrological interpretations</li>
+                <li>Service interruptions, bugs, or technical issues</li>
+                <li>Unauthorized access to your data or account</li>
+            </ul>
+            <p>Our total liability shall not exceed the amount you paid for the App in the 12 months preceding the claim.</p>
+        </div>
+
+        <div class="card">
+            <h2>7. Prohibited Uses</h2>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use the App for any unlawful purpose</li>
+                <li>Attempt to gain unauthorized access to the App or its systems</li>
+                <li>Interfere with or disrupt the App's functionality</li>
+                <li>Reverse engineer, decompile, or disassemble the App</li>
+                <li>Use the App to harass, abuse, or harm others</li>
+                <li>Share your account credentials with others</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>8. Intellectual Property</h2>
+            <p>All content, features, and functionality of the App are owned by GenA and are protected by intellectual property laws. You may not:</p>
+            <ul>
+                <li>Copy, modify, or distribute App content without permission</li>
+                <li>Use our trademarks or branding without authorization</li>
+                <li>Create derivative works based on the App</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>9. Termination</h2>
+            <ul>
+                <li><strong>By You:</strong> You may stop using the App at any time and delete it from your device</li>
+                <li><strong>By Us:</strong> We reserve the right to suspend or terminate your access for violations of these Terms</li>
+                <li>Upon termination, your right to use the App ceases immediately</li>
+                <li>Provisions that should survive termination (e.g., disclaimers, limitations of liability) will remain in effect</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>10. Changes to Terms</h2>
+            <p>We may update these Terms from time to time. We will notify you of any material changes by:</p>
+            <ul>
+                <li>Posting the updated Terms in the App</li>
+                <li>Updating the "Last Updated" date</li>
+                <li>Sending you a notification (for significant changes)</li>
+            </ul>
+            <p>Your continued use of the App after any changes indicates your acceptance of the updated Terms.</p>
+        </div>
+
+        <div class="card">
+            <h2>11. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which GenA operates, without regard to its conflict of law provisions.</p>
+        </div>
+
+        <div class="card">
+            <h2>12. Contact Us</h2>
+            <p>If you have any questions or concerns about these Terms of Service, please contact us at:</p>
+            <div class="contact-box">
+                <p><strong>Email:</strong> <a href="mailto:support@gen-aquarius.com">support@gen-aquarius.com</a></p>
+            </div>
+            <p>We will respond to your inquiry within 7 business days.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GenA. All rights reserved. &middot; <a href="privacy-policy.html">Privacy Policy</a> &middot; <a href="terms-of-service.html">Terms of Service</a></p>
+    </footer>
+</body>
+</html>
